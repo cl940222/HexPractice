@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <script src="../_js/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <h3>if 流程判斷 III</h3>
+    <div>
+        <h4>題目一：有沒有打折</h4>
+        請輸入金額
+        <input type="text" id="price">
+        <button id="checkSale">確認折扣</button>
+        <span id="result1"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>題目二：西元轉民國</h4>
+        請輸入西元年份
+        <input type="text" id="year">
+        <button id="convertYear">確認折扣</button>
+        <span id="result2"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>題目三：年薪計算機</h4>
+        請輸入月薪與年資
+        每月<input type="text" id="salary">元，
+        年資<input type="text" id="years">年
+        <button id="annualSalary">年薪</button>
+        <span id="result3"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>魔王題：數字大小寫轉換</h4>
+        請輸入金額
+        <input type="text" id="amnt" class="longtext">
+        <button id="getChinese">年薪</button>
+        <span id="result4"></span>
+    </div>
+
+    <script>
+        $(function () {
+
+            // 題目一：有沒有打折
+            checkSale.onclick = function () {
+                let a = parseInt($('#price').val());
+                if (a >= 4000) {
+                    result1.innerHTML = `7折，金額共${a * 0.7}元`;
+                } else if (a >= 3000) {
+                    result1.innerHTML = `8折，金額共${a * 0.8}元`;
+                } else if (a >= 2000) {
+                    result1.innerHTML = `9折，金額共${a * 0.9}元`;
+                } else {
+                    result1.innerHTML = `未滿 2000 無折扣，金額共${a}元`;
+                }
+            }
+
+            // 題目二：西元轉民國
+            convertYear.onclick = function () {
+                let a = parseInt($('#year').val());
+                if (a < 1912) {
+                    result2.innerHTML = '尚未建國';
+                } else {
+                    result2.innerHTML = `民國${a - 1911}年`;
+                }
+            }
+
+            // 題目三：年薪計算機
+            annualSalary.onclick = function () {
+                let a = parseInt(salary.value);
+                let b = years.value;
+                console.log(a);
+                console.log(b);
+                console.log(a * b);
+                if (b >= 5) {
+                    result3.innerHTML = `年終1.3個月，總年薪${a * 13.3}元`;
+                } else if (b >= 1) {
+                    result3.innerHTML = `年終1個月，總年薪${a * 13}元`;
+                } else {
+                    result3.innerHTML = `沒有年終，總年薪${a * b * 12}元`;
+                }
+            }
+
+
+            // 魔王題：數字大小寫轉換
+            var chineseChar = ['零', '壹', '貳', '參', '肆', '伍', '陸', '柒', '捌', '玖'];
+
+            $('#getChinese').on('click', function () {
+                $('#result4').text('');
+                var a = parseInt($('#amnt').val());
+                var getAmount = a.toString();
+                var x = getAmount.split('');
+                console.log(isNaN(a));
+
+                // console.log(typeof getAmount);
+                // console.log(typeof x);
+                var y = x.length;
+                // console.log(y);
+
+                if (isNaN(a) || a < 0) {
+                    $('#result4').text('格式錯誤');
+                } else {
+                    for (i = y; i >= 0; i--) {
+                        var z = x[y - i];
+                        var toChi = chineseChar[z];
+                        switch (i) {
+                            case 1:
+                                if (toChi == '零') {
+                                    $('#result4').append('元整');
+                                } else {
+                                    $('#result4').append(`${toChi}元整`);
+                                };
+                                break;
+                            case 2:
+                            case 6:
+                            case 10:
+                                if (chineseChar[x[y - (i - 1)]] != '零' && chineseChar[x[y - (i + 1)]] != '零' && toChi == '零') {
+                                    $('#result4').append(toChi);
+                                } else if (chineseChar[x[y - (i - 1)]] == '零' && chineseChar[x[y - (i + 1)]] != '零' && toChi == '零') {
+                                    $('#result4').append('');
+                                } else if (chineseChar[x[y - (i - 1)]] == '零' && chineseChar[x[y - (i + 1)]] == '零' && toChi == '零') {
+                                    $('#result4').append('');
+                                } else if (chineseChar[x[y - (i - 1)]] != '零' && chineseChar[x[y - (i + 1)]] == '零' && toChi == '零') {
+                                    $('#result4').append('');
+                                } else {
+                                    $('#result4').append(`${toChi}拾`);
+                                };
+                                break;
+                            case 3:
+                            case 7:
+                            case 11:
+                                if (chineseChar[x[y - (i - 1)]] != '零' && chineseChar[x[y - (i + 1)]] != '零' && toChi == '零') {
+                                    $('#result4').append(toChi);
+                                } else if (chineseChar[x[y - (i - 1)]] == '零' && chineseChar[x[y - (i + 1)]] != '零' && toChi == '零' && chineseChar[x[y - (i - 2)]] != '零') {
+                                    $('#result4').append(toChi);
+                                } else if (chineseChar[x[y - (i - 1)]] == '零' && chineseChar[x[y - (i + 1)]] != '零' && toChi == '零') {
+                                    $('#result4').append('');
+                                } else if (chineseChar[x[y - (i - 1)]] == '零' && chineseChar[x[y - (i + 1)]] == '零' && toChi == '零') {
+                                    $('#result4').append('');
+                                } else if (chineseChar[x[y - (i - 1)]] != '零' && chineseChar[x[y - (i + 1)]] == '零' && toChi == '零') {
+                                    $('#result4').append('');
+                                } else {
+                                    $('#result4').append(`${toChi}佰`);
+                                };
+                                break;
+                            case 4:
+                            case 8:
+                            case 12:
+                                if (chineseChar[x[y - (i - 1)]] != '零' && chineseChar[x[y - (i + 1)]] != '零' && toChi == '零') {
+                                    $('#result4').append(toChi);
+                                } else if (chineseChar[x[y - (i - 1)]] != '零' && chineseChar[x[y - (i + 1)]] == '零' && toChi == '零') {
+                                    $('#result4').append(toChi);
+                                } else if (chineseChar[x[y - (i - 1)]] == '零' && chineseChar[x[y - (i + 1)]] != '零' && toChi == '零' && chineseChar[x[y - (i - 2)]] == '零' && chineseChar[x[y - (i - 3)]] != '零') {
+                                    $('#result4').append(toChi);
+                                } else if (chineseChar[x[y - (i - 1)]] == '零' && chineseChar[x[y - (i + 1)]] == '零' && toChi == '零' && chineseChar[x[y - (i - 2)]] == '零' && chineseChar[x[y - (i - 3)]] != '零') {
+                                    $('#result4').append(toChi);
+                                } else if (chineseChar[x[y - (i - 1)]] == '零' && chineseChar[x[y - (i + 1)]] != '零' && toChi == '零' && chineseChar[x[y - (i - 2)]] != '零') {
+                                    $('#result4').append(toChi);
+                                } else if (chineseChar[x[y - (i - 1)]] == '零' && chineseChar[x[y - (i + 1)]] == '零' && toChi == '零' && chineseChar[x[y - (i - 2)]] != '零') {
+                                    $('#result4').append(toChi);
+                                } else if (chineseChar[x[y - (i - 1)]] == '零' && chineseChar[x[y - (i + 1)]] != '零' && toChi == '零') {
+                                    $('#result4').append('');
+                                } else if (chineseChar[x[y - (i - 1)]] == '零' && chineseChar[x[y - (i + 1)]] == '零' && toChi == '零') {
+                                    $('#result4').append('');
+                                } else {
+                                    $('#result4').append(`${toChi}仟`);
+                                };
+                                break;
+                            case 5:
+                                if (chineseChar[x[y - (i + 4)]] != '零' &&chineseChar[x[y - (i + 3)]] == '零' &&chineseChar[x[y - (i + 2)]] == '零' &&chineseChar[x[y - (i + 1)]] == '零' && toChi == '零' && chineseChar[x[y - (i - 1)]] != '零' ) {
+                                    $('#result4').append(toChi);
+                                } else if (chineseChar[x[y - (i + 4)]] != '零' &&chineseChar[x[y - (i + 3)]] == '零' &&chineseChar[x[y - (i + 2)]] == '零' &&chineseChar[x[y - (i + 1)]] == '零' && toChi == '零') {
+                                    $('#result4').append('');
+                                } else if (chineseChar[x[y - (i + 3)]] == '零' &&chineseChar[x[y - (i + 2)]] == '零' &&chineseChar[x[y - (i + 1)]] == '零' && toChi == '零'&&chineseChar[x[y - (i - 1)]] != '零') {
+                                    $('#result4').append(toChi);
+                                } else if (toChi == '零') {
+                                    $('#result4').append('萬');
+                                } else {
+                                    $('#result4').append(`${toChi}萬`);
+                                };
+                                break;
+                            case 9:
+                                if (toChi == '零') {
+                                    $('#result4').append('萬');
+                                } else {
+                                    $('#result4').append(`${toChi}億`);
+                                };
+                                break;
+                        }
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../_js/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="./css/all.css">
+</head>
+
+<body>
+    <h3>字串、數字相加</h3>
+    <div>
+        <h4>題目一：hello world！</h4>
+        <button id="btnHello">click</button>
+        <div id="result"></div>
+    </div>
+    <hr>
+    <div>
+        <h4>題目二：參數+字串練習</h4>
+        <input type="text" id="txtName">
+        <button id="btnHelloName">click</button>
+        <div id="result2"></div>
+    </div>
+    <hr>
+    <div>
+        <h4>題目三：參數加法產生器</h4>
+        <input type="number" id="txtNumber">
+        <button id="btnSum">click</button>
+        <div id="result3"></div>
+    </div>
+    <hr>
+    <div>
+        <h4>題目四：兩個參數相加器</h4>
+        <input type="text" id="txtNo1"> +
+        <input type="text" id="txtNo2">
+        <button id="btnSum2">=</button>
+        <div id="result4"></div>
+    </div>
+    <hr>
+    <div>
+        <h4>題目五：參數+字串相加</h4>
+        <input type="text" id="sum1">+
+        <input type="text" id="sum2">&
+        <input type="text" id="sum3">
+        <button id="btnSum3">=</button>
+        <div id="result5"></div>
+    </div>
+    
+
+
+    <script>
+        // var x = document.getElementById('result');
+        // function hello(){
+        //     console.log('ok');
+        //     x.innerText = 'Hello, World!';
+        // }
+
+        $(function () {
+
+            // 題目一：hello world！
+            btnHello.onclick = function () {
+                $('#result').append('Hello, World!<br>');
+            }
+
+            // 題目二：參數+字串練習
+            btnHelloName.onclick = function (){
+                console.log('ok');
+                var x = $('#txtName').val();
+                var y = x + '，Hello, World!<br>';
+                $('#result2').append(y);
+            }
+
+            // 題目三：參數加法產生器
+            btnSum.onclick = function(){
+                var x = $('#txtNumber').val();
+                var y = x*2 + '<br>';
+                $('#result3').append(y);
+            }
+
+            // 題目四：兩個參數相加器
+            btnSum2.onclick = function(){
+                var x = $('#txtNo1').val();
+                var y = $('#txtNo2').val();
+                var z = (parseInt(x)+parseInt(y)) + '<br>';
+                $('#result4').append(z);
+            }
+
+            // 題目五：參數+字串相加
+            btnSum3.onclick = function(){
+                var x = $('#sum1').val();
+                var y = $('#sum2').val();
+                var z = $('#sum3').val();
+                var a = parseInt(x) + parseInt(y);
+                var b = `第一加第二個參數加總為 ${a}，第三個參數為 ${z}<br>`;
+                $('#result5').append(b);
+            }
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="txt"></div>
+
+    <script>
+        // 題目一：星星顯示
+        function createStar(x) {
+            var star = '';
+            for (var i = 1; i <= x; i++) {
+                star += '*';
+            }
+            console.log(star);
+        }
+
+        createStar(1);
+        createStar(3);
+        createStar(5);
+
+        console.clear();
+
+        // 題目二：反轉陣列
+        function reverseAry(x) {
+            x.reverse();
+            console.log(x);
+        }
+
+        reverseAry([7, 8, 9]);
+        reverseAry(["black", "white", "red"]);
+        reverseAry([{ name: "mike" }, { name: "John" }]);
+
+        console.clear();
+
+        // 題目三：陣列轉字串multiplication
+        function aryToString(x) {
+            // console.log(typeof x);
+            console.log(x.toString());
+        }
+
+        aryToString([7, 8, 9]);
+        aryToString(["black", "white", "red"]);
+        aryToString([true, false, true]);
+
+        console.clear();
+
+        // 題目四：進階題，不適合新手：雙 for 迴圈
+        function multiplication(x) {
+            var startText = document.getElementById('txt');
+            var temp;
+            for (var j = 2; j <= x; j++) {
+                for (var i = 1; i <= j; i++) {
+                    temp = `${j} x ${i} = ${j * i}`;
+                    startText.innerHTML += temp + '<br>';
+                }
+                startText.innerHTML += '<br>';
+            }
+            startText.innerHTML  += '<hr>';
+
+        }
+
+        multiplication(3);
+        multiplication(5);
+    </script>
+</body>
+
+</html>

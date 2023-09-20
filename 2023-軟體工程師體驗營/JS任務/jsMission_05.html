@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <script src="../_js/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <h3>if 流程判斷 I</h3>
+    <div>
+        <h4>題目一：成年計算機</h4>
+        <h5>請輸入年齡</h5>
+        <input type="text" id="age">
+        <button id="getAge">=</button>
+        <span id="result1"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>題目二：法定性行為年紀計算機(16歲)</h4>
+        <h5>請輸入年齡</h5>
+        <input type="text" id="age2">
+        <button id="getAge2">=</button>
+        <span id="result2"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>題目三：滿 300 即可符合優惠條件，能使用 50 元折價券</h4>
+        <h5>請輸入金額</h5>
+        <input type="text" id="price">
+        <button id="canDiscount">資格</button>
+        <span id="result3"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>進階題：是否為質數</h4>
+        <h5>請輸入0~100範圍內數值</h5>
+        <input type="text" id="num">
+        <button id="isPrime">資格</button>
+        <span id="result4"></span>
+    </div>
+
+    <script>
+        $(function () {
+
+            // 題目一：成年計算機
+            getAge.onclick = function () {
+                let a = parseInt($('#age').val());
+                if (a >= 20) {
+                    $('#result1').text('成年');
+                } else {
+                    $('#result1').text('未成年');
+                }
+            }
+
+            // 題目二：法定性行為年紀計算機(16歲)
+            getAge2.onclick = function () {
+                let a = parseInt($('#age2').val());
+                if (a >= 16) {
+                    $('#result2').text('可以色色');
+                } else {
+                    $('#result2').text('你還不行哦~');
+                }
+            }
+
+            // 題目三：滿 300 即可符合優惠條件，能使用 50 元折價券
+            canDiscount.onclick = function () {
+                let a = parseInt($('#price').val());
+                let b = a - 50;
+                if (a >= 400) {
+                    let x = `符合優惠券資格，費用是 ${b}`;
+                    $('#result3').text(x);
+                } else if (a >= 300) {
+                    let y = `剛好符合資格，費用是 ${b}`;
+                    $('#result3').text(y);
+                } else if (a > 0) {
+                    let z = `不符合優惠券資格，費用是 ${a}`;
+                    $('#result3').text(z);
+                } else if (a == 0) {
+                    $('#result3').text('...你來亂的嗎？');
+                } else {
+                    $('#result3').text('再鬧我就生氣了哦~');
+                }
+            }
+
+            // 進階題：是否為質數
+            isPrime.onclick = function () {
+                let x = parseInt($('#num').val());
+                let a = Math.sqrt(parseInt($('#num').val()));
+                if (x > 100) {
+                    $('#result4').text('我只能算 100 以內的質數計算，原諒我QQ');
+                } else if (x == 6 || x == 8) {
+                    $('#result4').text('不是質數');
+                } else if (a >= 0 && Number.isInteger(a)) {
+                    $('#result4').text('不是質數');
+                } else if (a >= 0 && Number.isInteger(a) == false) {
+                    $('#result4').text('是質數');
+                } else {
+                    $('#result4').text('無法判別');
+                }
+            }
+
+            console.log(Number.isInteger(0));
+            console.log(Number.isInteger(1));
+            console.log(Number.isInteger(2.64));
+
+        })
+    </script>
+</body>
+
+</html>

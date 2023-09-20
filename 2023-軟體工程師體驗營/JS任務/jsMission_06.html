@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <script src="../_js/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <h3>if 流程判斷 II</h3>
+    <div>
+        <h4>題目一：日幣計算機 (1:0.32)</h4>
+        請輸入台幣金額
+        <input type="text" id="amount">
+        <button id="convert">轉換日幣</button>
+        <span id="result1"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>題目二：匯率計算機</h4>
+        請輸入台幣金額
+        <input type="text" id="amount2">
+        <select name="currency" id="currencyList">
+            <option value="USD">美金</option>
+            <option value="HKD">港幣</option>
+            <option value="GBP">英鎊</option>
+        </select>
+        <button id="convertCurrency">轉換為</button>
+        <span id="result2"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>題目三：BMI 計算機</h4>
+        請輸入身高體重<br>
+        <input type="text" id="height"> cm
+        <input type="text" id="weight"> kg
+        <button id="getBMI">計算結果</button>
+        <span id="result3"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>進階題：字串切割+if</h4>
+        請輸入三個數字並以半形逗號隔開 ex. 13,20,10<br>
+        <input type="text" id="number" class="longtext">
+        <button id="calc">計算結果</button>
+        <span id="result4"></span>
+    </div>
+
+    <script>
+        $(function () {
+            // 題目一：日幣計算機 (1:0.32)
+            convert.onclick = function () {
+                let a = parseInt($('#amount').val());
+                let b = parseInt(a / 0.32);
+                console.log(a);
+                console.log(typeof (a));
+                if (a > 0) {
+                    let x = `你換到的日幣有：${b}`;
+                    $('#result1').text(x);
+                } else if (a <= 0) {
+                    $('#result1').text('...沒錢別來亂');
+                } else {
+                    $('#result1').text('當我看不懂字串？？');
+                }
+            }
+
+            // 題目二：匯率計算機
+            convertCurrency.onclick = function () {
+                let a = parseInt($('#amount2').val());
+                let b = $('#currencyList').val();
+                let c;
+                let d;
+                // console.log(a);
+                // console.log(b);
+                if (a > 0) {
+                    switch (b) {
+                        case 'USD':
+                            c = Math.round((a / 29) * 100) / 100;
+                            d = `${c} USD`;
+                            $('#result2').text(d);
+                            console.log(c);
+                            console.log(d);
+                            break;
+                        case 'HKD':
+                            c = Math.round((a / 3) * 100) / 100;
+                            d = `${c} HKD`;
+                            $('#result2').text(d);
+                            break;
+                        case 'GBP':
+                            c = Math.round((a / 35) * 100) / 100;
+                            d = `${c} GBP`;
+                            $('#result2').text(d);
+                            break;
+                        default:
+                            $('#result2').text('幣別選擇錯誤');
+                            break;
+                    };
+                } else if (a <= 0) {
+                    $('#result2').text('沒有錢就別算了:)');
+                } else {
+                    $('#result2').text('請輸入數值');
+                }
+            }
+
+            // 題目三：BMI 計算機
+            getBMI.onclick = function () {
+                let a = (Math.round(($('#height').val()) * 100) / 100) / 100;
+                let b = Math.round(($('#weight').val()) * 100) / 100;
+                let c = b / (a ** 2);
+                if (c >= 35) {
+                    $('#result3').text('重度肥胖');
+                } else if (c >= 30) {
+                    $('#result3').text('中度肥胖');
+                } else if (c >= 27) {
+                    $('#result3').text('輕度肥胖');
+                } else if (c >= 24) {
+                    $('#result3').text('過重');
+                } else if (c >= 18.5) {
+                    $('#result3').text('正常');
+                } else {
+                    $('#result3').text('過輕');
+                }
+            }
+
+            // 進階題：字串切割+if
+            calc.onclick = function () {
+                let a = ($('#number').val()).split(',');
+                let x = a[0];
+                let b = Number.isInteger(Math.sqrt(x));
+                let b1;
+                if (Number.isInteger(x / 2)) {
+                    b1 = 'even';
+                } else if (Number.isInteger(Math.sqrt(x)) == false) {
+                    b1 = 'prime';
+                } else {
+                    b1 = 'neither';
+                };
+                let d;
+                let e;
+                if (b1 == 'prime') {
+                    d = parseInt(a[1]) + parseInt(a[2]);
+                    e = `${a[0]}為質數，${a[1]}+${a[2]}=${d}`;
+                    $('#result4').text(e);
+                } else if (b1 == 'even') {
+                    d = parseInt(a[1]) - parseInt(a[2]);
+                    e = `${a[0]}為偶數，${a[1]}-${a[2]}=${d}`;
+                    $('#result4').text(e);
+                } else {
+                    d = parseInt(a[1]) * parseInt(a[2]);
+                    e = `${a[0]}不是質數也不是偶數，${a[1]}x${a[2]}=${d}`;
+                    $('#result4').text(e);
+                }
+            }
+
+
+
+
+
+
+
+        })
+    </script>
+</body>
+
+</html>

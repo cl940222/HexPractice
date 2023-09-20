@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <script src="../_js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <h3>數字處理</h3>
+    <div>
+        <h4>題目一：平方計算</h4>
+        <input type="text" id="num">
+        <button id="square">squared</button>
+        <span id="result1"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>題目二：數學邏輯題</h4>
+        (
+        <input type="text" id="num1">+
+        <input type="text" id="num2">
+        )-
+        <input type="text" id="num3">
+        <button id="calc2">=</button>
+        <span id="result2"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>題目三：四捨五入題</h4>
+        <input type="text" id="num4">
+        <button id="calc3">=</button>
+        <span id="result3"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>題目四：字串轉數字</h4>
+        <input type="text" id="string">
+        <button id="toNumber">=</button>
+        <span id="result4"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>題目五：被二整除</h4>
+        <input type="text" id="num5">
+        <button id="divide">餘數</button>
+        <span id="result5"></span>
+    </div>
+    <script>
+        $(function(){
+
+            // 題目一：平方計算
+            square.onclick = function(){
+                var a = $('#num').val();
+                var b = parseInt(a)**2;
+                $('#result1').html(b);
+            }
+
+            // 題目二：數學邏輯題
+            calc2.onclick = function(){
+                var a = $('#num1').val();
+                var b = $('#num2').val();
+                var c = $('#num3').val();
+                var x = (parseInt(a)+parseInt(b))-parseInt(c);
+                $('#result2').text(x);
+            }
+
+            // 題目三：四捨五入題
+            calc3.onclick = function(){
+                var a = parseFloat($('#num4').val());
+                var x = Math.round(a*100)/100;
+                $('#result3').text(x);
+            }
+
+            // 題目四：字串轉數字
+            toNumber.onclick = function(){
+                var a = parseFloat($('#string').val());
+                $('#result4').text(a);
+            }
+
+            // 題目五：被二整除
+            divide.onclick = function(){
+                var a = parseInt($('#num5').val() % 2);
+                $('#result5').text(a);
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <script src="../_js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <h3>比較與邏輯運算子</h3>
+    <div>
+        <h4>題目一：比大小</h4>
+        <input type="text" id="int1"> >
+        <input type="text" id="int2">
+        <button id="isGreater">=</button>
+        <span id="result1"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>題目二：布林反轉</h4>
+        <span id="boolean">true</span>
+        <button id="toggleBoolean">change</button>
+    </div>
+    <hr>
+    <div>
+        <h4>題目三：型別判斷</h4>
+        <span>看console.log</span>
+    </div>
+    <hr>
+    <div>
+        <h4>題目四：打八折後，是否總價大於 100 元</h4>
+        <input type="text" id="int4">
+        <button id="isGreater2">*80% >100?</button>
+        <span id="result4"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>題目五：是否大於 200，且符合會員條件</h4>
+        <input type="text" id="int5">
+        <input type="checkbox" id="isVIP">我是會員 
+        <button id="match">符合資格?</button>
+        <span id="result5"></span>
+    </div>
+    <script>
+        $(function(){
+
+            // 題目一：比大小
+            isGreater.onclick = function(){
+                var a = $('#int1').val();
+                var b = $('#int2').val();
+                if(a>b){
+                    $('#result1').text('true');
+                    console.log('ok');
+                } else {
+                    $('#result1').text('false');
+                }
+            }
+
+            // 題目二：布林反轉
+            toggleBoolean.onclick = function(){
+                var a = $('#boolean').text();
+                if(a == 'true') {
+                    $('#boolean').text('false');
+                } else {
+                    $('#boolean').text('true');
+                }
+            }
+
+            // 題目三：型別判斷
+            function getType(x){
+                console.log(typeof(x));
+            }
+            console.log('題目三：型別判斷');
+            console.log('getType(3.33)');
+            getType(3.33);
+            console.log('getType("Hello")');
+            getType("Hello");
+            console.log('getType(true)');
+            getType(true);
+            console.log('getType([1,2,3])');
+            getType([1,2,3]);
+
+            // 題目四：打八折後，是否總價大於 100 元
+            isGreater2.onclick = function (){
+                var a = parseInt($('#int4').val())*0.8;
+                if (a>100){
+                    $('#result4').text('true');
+                } else {
+                    $('#result4').text('false');
+                }
+            }
+
+            // 題目五：是否大於 200，且符合會員條件
+            match.onclick = function(){
+                var a = parseInt($('#int5').val());
+                var b = $('#isVIP').prop('checked');
+                if(a>200 && b == true) {
+                    $('#result5').text('true');
+                } else {
+                    $('#result5').text('false');
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

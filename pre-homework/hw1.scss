@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
+
+$light-gray: rgba(239, 239, 239, 1);
+$gray: rgba(148, 148, 148, 1);
+$red: rgba(174, 0, 0, 1);
+$black: rgba(0, 0, 0, 1);
+
+// * {
+  // outline: 1px solid pink;
+// }
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.5;
+  max-width: 1920px;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+// reset css到此為止
+
+
+body {
+  font-family: 'Castoro', serif;
+  width: 1920px;
+  margin: 160px auto 0 auto;
+  font-weight: 400;
+}
+
+.container{
+  width: 1296px;
+  margin: 0 auto;
+  text-align: center;
+  h1 {
+    font-size: 128px;
+    letter-spacing: 15.36px;
+    text-align: left;
+  }
+  h2 {
+    font-size: 128px;
+    letter-spacing: 15.36px;
+    text-align: right;
+
+  }
+  .vt-img{
+    width: 636px;
+    height: 848px;
+  }
+  p {
+    width: 50%;
+    text-align: left;
+  }
+  section {
+    width: 50%;
+    text-align: left;
+  }
+}
+
+#sec2 {
+  width: 100%;
+  background-color: $light-gray;
+  padding: 48px 0;
+  margin-bottom: 80px;
+}
+
+#sec2 > .container > p{
+  margin-left: auto;
+}
+
+.container::before, .container::after{
+  content: '';
+  box-sizing: border-box;
+}
+
+
+
+h3 {
+  font-size: 40px;
+  color: $red;
+  border-bottom: 5px solid $red;
+  margin-top:0;
+}
+
+.fs-1 {
+  font-size: 32px;
+  color: $black;
+  margin-top:0;
+}
+
+.fs-2 {
+  font-size: 24px;
+  color: $black;
+}
+
+.fs-3 {
+  font-size: 20px;
+  color: $gray;
+  font-style: italic;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 40px;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+footer{
+  width:100%;
+  background-color: $black;
+  text-align: center;
+  padding: 64px 0;
+  margin-top: 160px;
+  a {
+    img{
+      height: 64px;
+      width: 64px;
+      margin: 0 20px;
+    }
+  }
+}

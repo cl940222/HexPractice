@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 小美買冰塊
+        // 錢包裡的錢
+        let wallet = 200;
+        // 冰塊價格
+        let icePrice = 25;
+        // 購買數量
+        let iceQty = 7;
+        // 剩餘金額
+        let leftOver = wallet - (icePrice * iceQty);
+
+        console.log(`小美錢包剩餘${leftOver}元`);
+
+        // 2. 小華去速食店
+        // 口袋裡的錢
+        let pocket = 180;
+        // 漢堡價格
+        let burgerPrice = 50;
+        // 可樂價格
+        let cokePrice = 30;
+        // 購買漢堡數量
+        let burgerQty = 1;
+        // 購買可樂數量
+        let cokeQty = 2;
+        // 剩餘金額
+        let lastMoney = pocket - (burgerPrice * burgerQty + cokePrice * cokeQty);
+
+        console.log(`小華口袋裡剩下${lastMoney}元`)
+    </script>
+</body>
+
+</html>

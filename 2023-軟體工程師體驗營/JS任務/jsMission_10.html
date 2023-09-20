@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h4>題目一：依照文字描述物件</h4>
+    <pre>
+        請宣告一個 family 的變數，賦予物件型別，並嘗試在裡頭加上以下資訊
+        母親叫做Mary
+        父親叫做 Bob
+        有三個孩子，分別叫做 John、Tom、Kate
+        養了五隻貓、七隻狗、八頭牛、九隻蜘蛛
+        房貸是否繳清：否
+    </pre>
+    Ans:
+    <pre>
+        var family = {
+            mom: 'Mary',
+            dad: 'Bob',
+            children: ['John','Tom','Kate'],
+            pets: {
+                cats: 5,
+                dogs: 7,
+                cows: 8,
+                spiders: 9
+            },
+            noLoans: false,
+        }
+        console.log(family.pets.cats);
+        
+        => 5
+    </pre>
+    <hr>
+    <h4>題目二：看圖設計物件</h4>
+    <pre>
+        請宣告一個 room 的變數，賦予物件型別，盡量描述下方圖片內容，例：有多少人開會，男女比例、文具數量等等。
+    </pre>
+    Ans:
+    <pre>
+        var room = {
+            men: 2,
+            women: 3,
+            monitors: 1,
+            laptops: 5,
+        }
+    </pre>
+    <hr>
+    <h4>題目三：擴充物件內容</h4>
+    <pre>
+        請透過 addKeyValue 函式，來增減 obj 物件內容。
+            const obj = {
+                name        
+                people:3
+            };
+            // input 輸入
+            addKeyValue("name","Mike")
+            addKeyValue("people",2)
+            addKeyValue("people",4)
+
+            // output 輸出
+            //1
+            {
+                name:"Mike",
+                people:3
+            }
+            //2
+            {
+                name:"Mike",
+                people:5
+            }
+            //3
+            {
+                name:"Mike",
+                people:9
+            }
+    </pre>
+    Ans:
+    <pre>
+            const obj = {
+                name: '',
+                people: 3
+            };
+            function addKeyValue(x, y){
+                if(x == 'name' && typeof y == 'string') {
+                    obj.name = y;
+                    console.log(obj);
+                } else if ( x== 'people' && typeof y == 'number') {
+                    obj.people += y;
+                    console.log(obj);
+                }
+            }
+            
+            addKeyValue("name", "Mike")
+            addKeyValue("people", 2)
+            addKeyValue("people", 4)
+
+
+            =>
+                {name: 'Mike', people: 3}
+                {name: 'Mike', people: 5}
+                {name: 'Mike', people: 9}
+    </pre>
+    <hr>
+    <h4>題目四：進階題，不適合新手</h4>
+    <pre>
+        請宣告一個 obj 函式，並用obj()[2]()方式執行，並會 return 回傳 “hi”
+
+        obj()[2]()
+        
+        // output 輸出
+        "hi"
+    </pre>
+    Ans:
+    <pre>
+        function obj1(){
+            return [ function(){}, function(){},function(){
+                console.log('hi');
+            } ];
+        }
+
+        obj1()[2]();
+
+
+            =>    hi
+    </pre>
+    <script>
+
+        // 題目一：依照文字描述物件
+        var family = {
+            mom: 'Mary',
+            dad: 'Bob',
+            children: ['John', 'Tom', 'Kate'],
+            pets: {
+                cats: 5,
+                dogs: 7,
+                cows: 8,
+                spiders: 9
+            },
+            noLoans: false,
+        }
+        console.log(family.pets.cats);
+
+        // 題目二：看圖設計物件
+        var room = {
+            men: 2,
+            women: 3,
+            monitors: 1,
+            laptops: 5,
+        }
+
+        // 題目三：擴充物件內容
+        const obj = {
+            name: '',
+            people: 3
+        };
+        function addKeyValue(x, y){
+            if(x == 'name' && typeof y == 'string') {
+                obj.name = y;
+                console.log(obj);
+            } else if ( x== 'people' && typeof y == 'number') {
+                obj.people += y;
+                console.log(obj);
+            }
+        }
+        
+        addKeyValue("name", "Mike")
+        addKeyValue("people", 2)
+        addKeyValue("people", 4)
+
+        // 題目四：進階題，不適合新手
+
+        function obj1(){
+            return [ function(){}, function(){},function(){
+                console.log('hi');
+            } ];
+        }
+
+        obj1()[2]();
+
+    </script>
+</body>
+
+</html>

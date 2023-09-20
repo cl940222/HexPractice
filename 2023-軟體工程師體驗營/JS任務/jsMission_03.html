@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <script src="../_js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <h3>字串設計</h3>
+    <div>
+        <h4>題目一：字串長度計算</h4>
+        <input type="text" id="string" class="longtext">
+        <button id="getLength">=</button>
+        <span id="result1"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>題目二：英文強制小寫</h4>
+        <input type="text" id="string2" class="longtext">
+        <button id="turnLower">=</button>
+        <span id="result2"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>題目三：去除掉段落的左右空白</h4>
+        <input type="text" id="string3" class="longtext">
+        <button id="removeSpace">=</button>
+        <span id="result3"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>題目四：字串依照條件轉陣列</h4>
+        <input type="text" id="string4" class="longtext">
+        <button id="toArray">=</button>
+        <span id="result4"></span>
+    </div>
+    <hr>
+    <div>
+        <h4>題目五：切割市區字串</h4>
+        <input type="text" id="string5" class="longtext">
+        <button id="sliceText">=</button>
+        <span id="result5"></span>
+    </div>
+
+    <script>
+        $(function(){
+
+            // 題目一：字串長度計算
+            getLength.onclick = function (){
+                var a = ($('#string').val()).length;
+                $('#result1').text(a);
+            }
+
+            // 題目二：英文強制小寫
+            turnLower.onclick = function (){
+                var a = ($('#string2').val()).toLowerCase();
+                $('#result2').text(a);
+            }
+
+            // 題目三：去除掉段落的左右空白
+            removeSpace.onclick = function(){
+                var a = ($('#string3').val()).trim();
+                $('#result3').text(a);
+            }
+            
+            // 題目四：字串依照條件轉陣列
+            toArray.onclick = function (){
+                var a = ($('#string4').val()).split(',');
+                $('#result4').text(a);
+                console.log(a);
+            }
+
+            // 題目五：切割市區字串
+            sliceText.onclick = function(){
+                var a = ($('#string5').val()).indexOf("市");
+                var b = ($('#string5').val()).indexOf("區");
+                var c = ($('#string5').val()).substr(a+1,b-a);
+                $('#result5').text(c);
+            }
+
+        })
+    </script>
+</body>
+</html>
