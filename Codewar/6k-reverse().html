@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        Write a function that takes in a string of one or more 
+        words, and returns the same string, but with all five 
+        or more letter words reversed (Just like the name of 
+        this Kata). Strings passed in will consist of only 
+        letters and spaces. Spaces will be included only when 
+        more than one word is present.
+
+        Examples:
+
+        spinWords( "Hey fellow warriors" ) => returns "Hey wollef sroirraw" 
+        spinWords( "This is a test") => returns "This is a test" 
+        spinWords( "This is another test" )=> returns "This is rehtona test"
+    </pre>
+    <script>
+        function spinWords(string) {
+            //TODO Have fun :)
+            var a = string.split(' ');
+            a.forEach(function(element, index){
+                if(element.length >= 5) {
+                    element = element.split('').reverse().join('');
+                    a[index] = element;
+                    // console.log(a);
+
+                }
+            });
+            return a.join(' ');
+        }
+
+        console.log(spinWords("Welcome"));
+        console.log(spinWords("Hey fellow warriors"));
+        console.log(spinWords("This is a test"));
+        console.log(spinWords("This is another test"));
+        console.log(spinWords("You are almost to the last test"));
+        console.log(spinWords("Just kidding there is still one more"));
+        console.log(spinWords("Seriously this is the last one"));
+
+    </script>
+</body>
+
+</html>

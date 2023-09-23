@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        Complete the solution so that it returns true if the 
+        first argument(string) passed in ends with the 2nd 
+        argument (also a string).
+
+            Examples:
+
+            solution('abc', 'bc') // returns true
+            solution('abc', 'd') // returns false
+    </pre>
+    <script>
+        function solution(str, ending) {
+            // TODO: complete
+            var strLength = str.length;
+            var endingLength = ending.length;
+            var endingX = str.substring( strLength-endingLength );
+            if (endingX == ending ) {
+                // return `${endingX}, ${ending}`;
+                return true;
+            } else {
+                // return `${endingX}, ${ending}`;
+                return false;
+            }
+        }
+
+        console.log(solution('abcde', 'cde'));
+        console.log(solution('abcde', 'abc'));
+    </script>
+</body>
+
+</html>
