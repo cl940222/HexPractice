@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        Implement a function that accepts 3 integer values a, b, c. 
+        The function should return true if a triangle can be built 
+        with the sides of given length and false in any other case.
+
+        (In this case, all triangles must have surface greater than 0 
+        to be accepted).
+    </pre>
+    <script>
+        // function isTriangle(a, b, c) {
+        //     if(a == 0 || b == 0 || c == 0) {
+        //         return false;
+        //     } else {
+        //         let triangle = [a, b, c];
+        //         triangle.sort(function(a, b){return a - b});
+        //         var temp = (triangle[0] + triangle[1]) > triangle[2] ? true : false;
+        //         return triangle;
+        //     }
+
+        // }
+
+        function isTriangle(a, b, c) {
+            return a + b > c && a + c > b && c + b > a;
+        }
+
+        console.log(isTriangle(1, 2, 2));
+        console.log(isTriangle(10, -2, 2));
+    </script>
+</body>
+
+</html>

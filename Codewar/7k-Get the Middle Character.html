@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        You are going to be given a word. Your job is to return the 
+        middle character of the word. If the word's length is odd, 
+        return the middle character. If the word's length is even, 
+        return the middle 2 characters.
+
+        #Examples:
+
+        Kata.getMiddle("test") should return "es"
+
+        Kata.getMiddle("testing") should return "t"
+
+        Kata.getMiddle("middle") should return "dd"
+
+        Kata.getMiddle("A") should return "A"
+    </pre>
+    <script>
+        function getMiddle(s) {
+            var fullS = s.split('');
+            if (fullS.length %2 == 0) {
+                var temp = (fullS.length / 2) ;
+                var tempb = (fullS.length / 2) - 1;
+                return `${fullS[tempb]}${fullS[temp]}`;
+            } else {
+                var temp = Math.ceil(fullS.length / 2) - 1;
+                return fullS[temp];
+            }
+        }
+
+        console.log(getMiddle("test"));
+        console.log(getMiddle("testing"));
+        console.log(getMiddle("middle"));
+        console.log(getMiddle("A"));
+    </script>
+</body>
+
+</html>
