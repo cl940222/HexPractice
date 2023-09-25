@@ -60,6 +60,9 @@ table {
 }
 // reset css到此為止
 
+*, *:before, *:after{
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Castoro', serif;
@@ -108,10 +111,7 @@ body {
   margin-left: auto;
 }
 
-.container::before, .container::after{
-  content: '';
-  box-sizing: border-box;
-}
+
 
 
 

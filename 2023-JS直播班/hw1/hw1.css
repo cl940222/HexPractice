@@ -54,6 +54,10 @@ table {
   border-spacing: 0;
 }
 
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Castoro", serif;
   width: 1920px;
@@ -98,11 +102,6 @@ body {
 
 #sec2 > .container > p {
   margin-left: auto;
-}
-
-.container::before, .container::after {
-  content: "";
-  box-sizing: border-box;
 }
 
 h3 {
