@@ -49,7 +49,35 @@ table {
 
 /* reset 到此為止 */
 
+/* ↓↓↓↓　.header  ↓↓↓↓ */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.menu {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.menu li a{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: rgb(86, 180, 149);
+    font-weight: bold;
+}
+
+.menu li a:hover {
+    border-bottom: 3px solid rgb(86,180,149);
+}
+
+
+/* ↑↑↑↑　.header  ↑↑↑↑ */
+
+
+/* ↓↓↓↓　.content  ↓↓↓↓ */
 .container {
     width: 100%;
     margin: 0 auto;
@@ -81,3 +109,4 @@ table {
     letter-spacing: 1px;
     list-style: inside;
 }
+/* ↑↑↑↑　.content  ↑↑↑↑ */
