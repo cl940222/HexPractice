@@ -1,0 +1,42 @@
+.container {
+    width: 1144px;
+    height: 800px;
+    margin: 0 auto;
+    background-color: #e7eeea;
+    font-size: 30px;
+    font-family: 'Microsoft JhengHei';
+    font-weight: bold;
+    color: #37523d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container>img{
+    margin-bottom: 30px;
+}
+
+.footer {
+    width: 1144px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer>a{
+    margin-left: 60px;
+}
+
+.menu {
+    display: flex;
+    margin-right: 60px;
+}
+.menu li a{
+    display: block;
+    padding: 32px 0;
+    margin-left: 20px;
+    text-decoration: none;
+    color: #37523d;
+    font-weight: bold;
+}

@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nanum+Pen+Script&display=swap');
+
+.container {
+    width: 855px;
+    margin: 0 auto;
+    background-color: #b3d4d1;
+    display: flex;
+    align-items: center;
+}
+
+.container p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 30px;
+    width: 345px;
+    padding: 50px;
+    color: white;
+}
+
+.container img{
+    width: 510px;
+}
