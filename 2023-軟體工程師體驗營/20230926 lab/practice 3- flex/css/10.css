@@ -15,7 +15,7 @@
     font-size: 20px;
 }
 
-.list a, .list h4{
+.list p a, .list h4{
     text-decoration: none;
     color: inherit;
     display: block;
@@ -27,7 +27,7 @@
     color: white;
 }
 
-.list li:nth-child(1){
+.list p:hover{
     background-color: #e7eeea;
 }
 
@@ -63,4 +63,9 @@
     font-size: 25px;
     padding: 30px 0;
     background-color: #e7eeea;
+}
+
+.item a:hover{
+    background-color: #37523d;
+    color: #e7eeea;
 }

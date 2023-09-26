@@ -31,12 +31,17 @@
 .menu {
     display: flex;
     margin-right: 60px;
+    padding: 16px 0;
 }
 .menu li a{
     display: block;
-    padding: 32px 0;
+    padding: 16px 0;
     margin-left: 20px;
     text-decoration: none;
     color: #37523d;
     font-weight: bold;
+}
+.menu li a:hover {
+    background-color: #37523d;
+    color: #e7eeea;
 }
