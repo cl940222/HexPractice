@@ -49,6 +49,10 @@ table {
 
 /* reset 到此為止 */
 
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
 .homeIndex {
     margin: 0 auto;
     width: 50%;

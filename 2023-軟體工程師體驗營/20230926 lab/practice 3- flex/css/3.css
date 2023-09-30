@@ -1,0 +1,56 @@
+.container {
+    font-family: 'Microsoft JhengHei';
+    color: #37523d;
+    display: flex;
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px 12px;
+    background-color: #eaf0ed;
+}
+
+.sidebar a{
+    display: block;
+    margin-top: 36px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #37523d;
+    font-weight: bold;
+}
+
+.sidebar a:hover{
+    color: #badda7;
+    
+}
+
+.main {
+    padding: 80px 90px;
+}
+
+.main h4{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 28px;
+}
+
+.main p{
+    font-size: 24px;
+    line-height: 34px;
+    margin-bottom: 28px;
+    color: black;
+}
+
+.mainImg{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.mainImg img{
+    margin-bottom: 10px;
+}

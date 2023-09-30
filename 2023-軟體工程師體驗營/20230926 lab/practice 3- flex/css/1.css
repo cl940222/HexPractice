@@ -1,0 +1,38 @@
+.container {
+    background-color: #37523d;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 375px;
+    border: 1px solid #37523d;
+    box-shadow: 25px 0px 20px -20px rgba(0, 0, 0, 0.45),
+        -25px 0px 20px -20px rgba(0, 0, 0, 0.45);
+}
+
+.card .head {
+    padding: 90px 58px;
+    text-align: center;
+    color: #37523d;
+    font-size: 84px;
+    background-color: #e7eeea;
+}
+
+.card .text {
+    padding: 36px 30px;
+    /* margin-bottom: 50px; */
+    background-color: white;
+}
+
+.text h3 {
+    font-size: 30px;
+    color: #37523d;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.text p {
+    font-size: 24px;
+    line-height: 32px;
+}
